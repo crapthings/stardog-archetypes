@@ -1,0 +1,1 @@
+prefix skos-thes: <http://purl.org/iso25964/skos-thes#>
