@@ -1,0 +1,1336 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://uniskos.com/onto#"
+     xml:base="https://uniskos.com/onto"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:voaf="http://purl.org/vocommons/voaf#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://uniskos.com/onto#">
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</dc:date>
+        <terms:contributor></terms:contributor>
+        <terms:contributor>Dave Beckett</terms:contributor>
+        <terms:contributor>Nikki Rogers</terms:contributor>
+        <terms:contributor>Participants in W3C&apos;s Semantic Web Deployment Working Group.</terms:contributor>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-10-04</terms:created>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-05-23</terms:created>
+        <terms:creator></terms:creator>
+        <terms:creator>Alistair Miles</terms:creator>
+        <terms:creator>Sean Bechhofer</terms:creator>
+        <terms:description xml:lang="en">An RDF vocabulary extending SKOS and allowing the description and linking of lexical entities.</terms:description>
+        <terms:description xml:lang="en">An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, &apos;folksonomies&apos;, other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies.</terms:description>
+        <terms:description xml:lang="en">An RDF vocabulary for extending some SKOS and ISO-THES functions in order to improve the linked data consumption of SKOS datasets</terms:description>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-09</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-09-10</terms:modified>
+        <terms:title xml:lang="en">SKOS Vocabulary</terms:title>
+        <terms:title xml:lang="en">UNESKOS Vocabulary</terms:title>
+        <voaf:toDoList>Todo: 
+Not modelled but requiring further extension:
+
+- CustomTermAttribute : 
+  Best practice would be to define custom RDF data-type properties taking plain literal values. The property name depends on the customAttributeType.
+
+- CustomConceptAttribute :
+  Best practice would be to define custom RDF data-type properties taking plain literal values. The property name depends on the customAttributeType.
+
+- refersTo (reference from within a note to a concept or label/term:
+   May be an embedded and tagged link in the note value (e.g., as done for EuroVoc http://eurovoc.europa.eu/).
+
+- CustomNote :
+  Depending noteType a new custom property should be defined as a sub-property of skos:note (consider applicability of: skos:changeNote and skos:example)
+ 
+ - BTG/NTG - BTP/NTP - BTI/NTI :
+   Currently these are only defined as direct (one-step) sub-properties of skos:broader / skos:narrower.
+
+Some constraints currently expressed only in natural language (in rdfs:comment) may be formally expressed as OWL(2) axioms.
+
+We have postponed the implementation of the iso-thes properties mentioned in the VersionHistory section of the mapping documentation.</voaf:toDoList>
+        <rdfs:comment xml:lang="en">These notes apply to the published mapping between the ISO 25964 data model and the SKOS schema (http://www.niso.org/schemas/iso25964/correspondencesSKOS/).
+Remarks can be exchanged using: 25964info@list.niso.org 
+Subscription info and archive is on: http://www.niso.org/lists/25964info/ 
+General information about ISO 25964: http://www.niso.org/schemas/iso25964/
+
+The annotation http://www.w3.org/2003/06/sw-vocab-status/ns#term_status indicates &quot;proposed&quot; properties that are not part of the mapping documentation.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://skos.um.es/TR/uneskos"/>
+        <rdfs:seeAlso rdf:resource="http://skos.um.es/TR/uneskos-reference/"/>
+        <rdfs:seeAlso rdf:resource="http://www.niso.org/schemas/iso25964/correspondencesSKOS/"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2008/05/skos"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/skos-reference/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/vocommons/voaf#toDoList -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocommons/voaf#toDoList"/>
+    
+
+
+    <!-- http://www.w3.org/2003/06/sw-vocab-status/ns#term_status -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status">
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-05</terms:issued>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-05</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
+        <rdfs:label xml:lang="en">model axiom or term status</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns:term_status>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel">
+        <rdfs:comment xml:lang="en">Simple or basic super property of ISO hasNonPreferredLabel
+
+Applies if the value of &quot;hasNonPreferredLabel&quot; is of class SimpleNonPreferredTerm with the Boolean attribute &quot;hidden&quot; either absent or with value false.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The range of skos:altLabel is the class of RDF plain literals.</rdfs:comment>
+        <rdfs:comment xml:lang="en">skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">alternative label</rdfs:label>
+        <skos:definition xml:lang="en">An alternative lexical label for a resource.</skos:definition>
+        <skos:example xml:lang="en">Acronyms, abbreviations, spelling variants, and irregular plural/singular forms may be included among the alternative labels for a concept. Mis-spelled terms are normally included as hidden labels (see skos:hiddenLabel).</skos:example>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#changeNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#changeNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">change note</rdfs:label>
+        <skos:definition xml:lang="en">A note about a modification to a concept.</skos:definition>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">definition</rdfs:label>
+        <skos:definition xml:lang="en">A statement or formal explanation of the meaning of a concept.</skos:definition>
+        <skos:definition xml:lang="en">Caution: In ISO 25964, &quot;hasDefinition&quot; applies to a term rather than to a concept.</skos:definition>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#editorialNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">editorial note</rdfs:label>
+        <skos:definition xml:lang="en">A note for an editor, translator or maintainer of the vocabulary.</skos:definition>
+        <skos:definition xml:lang="en">Caution: In ISO 25964, &quot;hasEditorialNote&quot; applies to a term rather than to a concept.</skos:definition>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">example</rdfs:label>
+        <skos:definition xml:lang="en">An example of the use of a concept.</skos:definition>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#hiddenLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#hiddenLabel">
+        <rdfs:comment xml:lang="en">Simple or basic super property of ISO hasNonPreferredLabel
+
+Applies if the value of &quot;hasNonPreferredLabel&quot; is of class SimpleNonPreferredTerm with the Boolean attribute &quot;hidden&quot; having value true.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The range of skos:hiddenLabel is the class of RDF plain literals.</rdfs:comment>
+        <rdfs:comment xml:lang="en">skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">hidden label</rdfs:label>
+        <skos:definition xml:lang="en">A lexical label for a resource that should be hidden when generating visual displays of the resource, but should still be accessible to free text search operations.</skos:definition>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#historyNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#historyNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">history note</rdfs:label>
+        <skos:definition xml:lang="en">A note about the past state/use/meaning of a concept.</skos:definition>
+        <skos:definition xml:lang="en">Definition: In ISO 25964, &quot;hasHistoryNote&quot; can apply to a term or to a concept.</skos:definition>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note">
+        <rdfs:comment xml:lang="en">ISO refersTo is not mapped.
+
+Work is ongoing in the RDF group to type the content explicitly as HTML or XML in RDF1.1 (http://dvcs.w3.org/hg/rdf/raw-file/default/rdf-concepts/index.html#section-html). This would allow embedding relevant hyperlinks in notes.
+
+May be an embedded and tagged link in the note value (e.g., as done for EuroVoc).
+
+
+In ISO 25964, some types of Note are associated with concepts, others with terms. In SKOS, all documentation notes are associated with concepts.
+
+In basic SKOS, notes are represented using simple annotation properties, which type captures the note type. However the SKOS annotation properties can also be used with structured representation of notes as fully-fledged resources. See http://www.w3.org/TR/skos-primer/#secdocumentation and http://www.w3.org/TR/skos-primer/#secadvanceddocumentation for examples of both approaches.
+
+Within a thesaurus the application of notes to concept and term is more restrictive than in SKOS.
+
+A note may have some structure or formatting. In general, this can be modelled using rdf:value (to represent lexicalValue)
+
+The language should be held in rdf:value. If this is an XMLLiteral, the language shall also be made available using dc:language (or dct:language).
+
+Note: Work is ongoing in the RDF group to type the content explicitly as HTML or XML In RDF1.1 (http://dvcs.w3.org/hg/rdf/raw-file/default/rdf-concepts/index.html#section-html). This would allow embedding relevant hyperlinks in notes.
+
+Additional attributes can be added to the note structure:
+- dct:created
+- dct:modified</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">note</rdfs:label>
+        <skos:definition xml:lang="en">A general note, for any purpose.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property may be used directly, or as a super-property for more specific note types.</skos:scopeNote>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+        <rdfs:comment xml:lang="en">A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Simple super property of ISO hasPreferredLabel
+
+Basic SKOS allows labels (as simple literals) to be attached directly to Concepts using skos:prefLabel; this is the preferred simple scenario where label relations are not explicit.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The range of skos:prefLabel is the class of RDF plain literals.</rdfs:comment>
+        <rdfs:comment xml:lang="en">skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise
+      disjoint properties.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">preferred label</rdfs:label>
+        <skos:definition xml:lang="en">The preferred lexical label for a resource, in a given language.</skos:definition>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">scope note</rdfs:label>
+        <skos:definition xml:lang="en">A note that helps to clarify the meaning and/or the use of a concept.</skos:definition>
+        <skos:definition xml:lang="en">Caution: In ISO 25964, &quot;hasScopeNote&quot; applies to a concept rather than to a term.</skos:definition>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#note"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#broaderGeneric -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#broaderGeneric">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+        <owl:inverseOf rdf:resource="http://purl.org/iso25964/skos-thes#narrowerGeneric"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-11-11</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">broader term (generic)</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns:term_status>
+        <skos:definition xml:lang="en">Definition: ISO 25964-1: BTG
+The immediate (direct or one-step) class - generalized class relationship.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#broaderInstantial -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#broaderInstantial">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+        <owl:inverseOf rdf:resource="http://purl.org/iso25964/skos-thes#narrowerInstantial"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-09</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">broader term (instantial)</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns:term_status>
+        <skos:changeNote xml:lang="en">The URI has been renamed: #broaderInstantive is replaced by #broaderInstantial according to the observed usage of these words in English. (2013-12-09)</skos:changeNote>
+        <skos:definition xml:lang="en">Definition: ISO 25964-1: BTI
+The immediate (direct or one-step) instance - class relationship.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#broaderPartitive -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#broaderPartitive">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+        <owl:inverseOf rdf:resource="http://purl.org/iso25964/skos-thes#narrowerPartitive"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-11-18</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">broader term (partitive)</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns:term_status>
+        <skos:definition xml:lang="en">Definition: ISO 25964-1: BTP
+When the ISO 25964 standard is followed, the BTP/NTP relationship should qualify for a transitive closure.</skos:definition>
+        <skos:example xml:lang="en">A &quot;bicycle wheel&quot; for instance belongs uniquely to a &quot;bicycle&quot; while a &quot;wheel&quot; does not.
+A BTP/NTP relationship should not be established between &quot;bicycles&quot; and &quot;wheels&quot; because a wheel could be part of a motor car, a wheelbarrow or one of many other artefacts.</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#microThesaurusOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#microThesaurusOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+        <owl:inverseOf rdf:resource="http://purl.org/umu/uneskos#hasMicroThesaurus"/>
+        <rdfs:domain rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-10-04</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">micro-thesaurus of</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+        <skos:definition xml:lang="en">Definition: Concept groups published as sub-thesauri (e.g., having micro-thesaurus as ISO conceptGroupType) </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#narrowerGeneric -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#narrowerGeneric">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-11-11</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">narrower term (generic)</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns:term_status>
+        <skos:definition xml:lang="en">Definition: ISO 25964-1: NTG
+The immediate (direct or one-step) class - specialized class relationship.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#narrowerInstantial -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#narrowerInstantial">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-09</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">narrower term (instantial)</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns:term_status>
+        <skos:changeNote xml:lang="en">The URI has been renamed: #narrowerInstantive is replaced by #narrowerInstantial according to the observed usage of these words in English. (2013-12-09)</skos:changeNote>
+        <skos:definition xml:lang="en">Definition: ISO 25964-1: NTI
+The immediate (direct or one-step) class - instance relationship.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#narrowerPartitive -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#narrowerPartitive">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-11-18</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">narrower term (partitive)</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proposed</ns:term_status>
+        <skos:definition xml:lang="en">Definition: ISO 25964-1: NTP
+When the ISO 25964 standard is followed, the BTP/NTP relationship should qualify for a transitive closure.</skos:definition>
+        <skos:example xml:lang="en">A &quot;bicycle wheel&quot; for instance belongs uniquely to a &quot;bicycle&quot; while a &quot;wheel&quot; does not.
+A BTP/NTP relationship should not be established between &quot;bicycles&quot; and &quot;wheels&quot; because a wheel could be part of a motor car, a wheelbarrow or one of many other artefacts.</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#plusUF -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#plusUF">
+        <rdfs:domain rdf:resource="http://purl.org/iso25964/skos-thes#CompoundEquivalence"/>
+        <rdfs:range rdf:resource="http://purl.org/iso25964/skos-thes#SplitNonPreferredTerm"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-06-08</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">split non preferred term</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deprecated</ns:term_status>
+        <skos:definition xml:lang="en">Definition: ISO 25964-1: UF+
+The non preferred term labeling a complex concept.
+The complex concept will be identified by splitting the non preferred term into 2 or more (component) preferred terms.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#plusUFTerm -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#plusUFTerm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2008/05/skos-xl#labelRelation"/>
+        <owl:inverseOf rdf:resource="http://purl.org/iso25964/skos-thes#plusUseTerm"/>
+        <rdfs:domain rdf:resource="http://purl.org/iso25964/skos-thes#PreferredTerm"/>
+        <rdfs:range rdf:resource="http://purl.org/iso25964/skos-thes#SplitNonPreferredTerm"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-09</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">UF+</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+        <skos:definition xml:lang="en">Definition: ISO 25964-1: UF+
+The non-preferred term expressing a compound concept that should be represented by a combination of preferred terms</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#plusUse -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#plusUse">
+        <rdfs:domain rdf:resource="http://purl.org/iso25964/skos-thes#CompoundEquivalence"/>
+        <rdfs:range rdf:resource="http://purl.org/iso25964/skos-thes#PreferredTerm"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-06-08</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">component preferred term</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deprecated</ns:term_status>
+        <skos:scopeNote xml:lang="en">ISO 25964-1: USE+
+One of two or more (component) preferred terms used together to represent the (complex) concept labeled by a (split) non preferred term.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#plusUseTerm -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#plusUseTerm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2008/05/skos-xl#labelRelation"/>
+        <rdfs:domain rdf:resource="http://purl.org/iso25964/skos-thes#SplitNonPreferredTerm"/>
+        <rdfs:range rdf:resource="http://purl.org/iso25964/skos-thes#PreferredTerm"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-10-04</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">USE+</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+        <skos:definition xml:lang="en">Definition: ISO 25964-1: USE+
+The two or more (component) preferred terms following should be used together to represent the concept indicated by the (split) non preferred term.</skos:definition>
+        <skos:scopeNote xml:lang="en">iso-thes:plusUseTerm (and its inverse iso-thes:plusUFTerm) may be derived from iso-thes:CompoundEquivalence.
+
+For an iso-thes:CompoundEquivalence instance each derived iso-thes:plusUseTerm has as:
+- subject: the iso-thes:plusUF value
+- object: the iso-thes:plusUse value
+
+In special cases where the iso-thes:SplitNonPreferredTerm has more than one decomposition, the inverse inference may not be possible.
+</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#subGroup -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#subGroup">
+        <owl:inverseOf rdf:resource="http://purl.org/iso25964/skos-thes#superGroup"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+        <rdfs:range rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-10-04</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">sub group</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+        <skos:definition xml:lang="en">Definition: All members of the (object) subGroup are members of the (subject) group.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#subordinateArray -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#subordinateArray">
+        <owl:inverseOf rdf:resource="http://purl.org/iso25964/skos-thes#superOrdinate"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://purl.org/iso25964/skos-thes#ThesaurusArray"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-09</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">subordinate array</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+        <skos:definition xml:lang="en">Definition: Explicitly links a (superordinate) concept to one or more subordinate arrays. Each array may either be composed of narrower concepts of the superordinate concept (in which case there may be an associated node label with a characteristic of division) or by concepts that need not be narrower concepts of the superordinate concept (in which case a node label may provide a facet name).
+
+In other words, though each array only contains sibling concepts, no hierarchical relation may be automatically derived between a concept and the concepts in any of its subordinate arrays. The hierarchical relationship between these concepts has to be asserted explicitly.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#superGroup -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#superGroup">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+        <rdfs:range rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-11-11</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">super group</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+        <skos:definition xml:lang="en">Definition: All members of the (subject) group are members of the (object) superGroup.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#superOrdinate -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iso25964/skos-thes#superOrdinate">
+        <rdfs:domain rdf:resource="http://purl.org/iso25964/skos-thes#ThesaurusArray"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-11-09</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">super ordinate</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+        <skos:definition xml:lang="en">Definition: ISO 25964: hasSuperOrdinateConcept
+The (subject) array organizes a set of sibling concepts under the (object) concept.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/umu/uneskos#contains -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/umu/uneskos#contains">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/umu/uneskos"/>
+        <rdfs:label xml:lang="en">contains element</rdfs:label>
+        <skos:definition xml:lang="en">Relates a concept scheme with any resource.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/umu/uneskos#hasMainConcept -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/umu/uneskos#hasMainConcept">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#member"/>
+        <owl:inverseOf rdf:resource="http://purl.org/umu/uneskos#mainConceptOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/umu/uneskos"/>
+        <rdfs:label xml:lang="en">has main concept</rdfs:label>
+        <skos:definition xml:lang="en">Identifies access point concepts into a skos:Collection.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/umu/uneskos#hasMicroThesaurus -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/umu/uneskos#hasMicroThesaurus">
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://purl.org/iso25964/skos-thes#ConceptGroup"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/umu/uneskos"/>
+        <rdfs:label xml:lang="en">has Microthesaurus</rdfs:label>
+        <skos:definition xml:lang="en">Relates a Concept Scheme with a ConceptGroup.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/umu/uneskos#mainConceptOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/umu/uneskos#mainConceptOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/umu/uneskos#memberOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdfs:isDefinedBy rdf:resource="http://skos.um.es/voc/uneskos"/>
+        <rdfs:label xml:lang="en">is main concept in Collection</rdfs:label>
+        <skos:definition xml:lang="en">Relates a concept to a Collection as a access point.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/umu/uneskos#memberOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/umu/uneskos#memberOf">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#member"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Collection"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/umu/uneskos"/>
+        <rdfs:label xml:lang="en">member of</rdfs:label>
+        <skos:definition xml:lang="en">Identifies a concept collection.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broadMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broadMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broader"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#mappingRelation"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrowMatch"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has broader match</rdfs:label>
+        <skos:definition xml:lang="en">skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#broaderTransitive"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+        <rdfs:comment xml:lang="en">Broader concepts are typically rendered as parents in a concept hierarchy (tree).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has broader</rdfs:label>
+        <skos:definition xml:lang="en">Comment: As an extension to SKOS, sub-properties of skos:broader and skos:narrower may be needed to model the different hierarchical relationships identified by the ISO 25964 attribute &quot;role&quot;.</skos:definition>
+        <skos:definition xml:lang="en">Relates a concept to a concept that is more general in meaning.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broaderTransitive -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broaderTransitive">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrowerTransitive"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:comment xml:lang="en">Can be used to derive ISO hasTopConcept (which is different from skos:hasTopConcept).
+
+The ISO hasTopConcept can be derived in SKOS from skos:broaderTransitive where the object of skos:broaderTransitive is a concept having the property skos:topConceptOf (i.e., a ThesaurusConcept having topConcept = true).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has broader transitive</rdfs:label>
+        <skos:definition>skos:broaderTransitive is a transitive superproperty of skos:broader.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:broaderTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#mappingRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has close match</rdfs:label>
+        <skos:definition xml:lang="en">skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of &quot;compound errors&quot; when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:comment xml:lang="en">skos:exactMatch is disjoint with each of the properties skos:broadMatch and skos:relatedMatch.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has exact match</rdfs:label>
+        <skos:definition xml:lang="en">skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#hasTopConcept -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#hasTopConcept">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2004/02/skos/core#topConceptOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has top concept</rdfs:label>
+        <skos:definition xml:lang="en">Definition: Captures ISO TopLevelRelationship</skos:definition>
+        <skos:definition xml:lang="en">Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#inScheme -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#inScheme">
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:comment xml:lang="en">Super property of ISO isPartOf
+
+Applies to any ISO 25964 &quot;isPartOf&quot; relation that targets the Thesaurus. Subjects of the skos:inScheme statements can be ISO 25964’s ThesaurusConcept, ConceptGroup, and ThesaurusArray.
+
+Only applies to ISO 25964 &quot;contains&quot; statements having a Thesaurus [ConceptScheme] as subject.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">is in scheme</rdfs:label>
+        <skos:definition xml:lang="en">Relates a resource (for example a concept) to a concept scheme in which it is included.</skos:definition>
+        <skos:scopeNote xml:lang="en">A concept may be a member of more than one concept scheme.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#mappingRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#mappingRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+        <rdfs:comment xml:lang="en">These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">is in mapping relation with</rdfs:label>
+        <skos:definition xml:lang="en">Relates two concepts coming, by convention, from different schemes, and that have comparable meanings</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#member -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#member">
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Collection"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">ISO
+- hasMemberArray
+- hasMemberConcept
+- hasAsMember
+Note: SKOS S39 (any concept in a List of a skos:memberList is also a value of skos:member).
+
+By definition, used to represent members of a thesaurus Array or of a thesaurus Group.
+
+An Array may have as members thesaurus Concepts or other thesaurus Arrays.
+
+Thesaurus Group members are thesaurus Concepts.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has member</rdfs:label>
+        <skos:definition xml:lang="en">Relates a collection to one of its members.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#memberList -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#memberList">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#OrderedCollection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+        <rdfs:comment xml:lang="en">For any resource, every item in the list given as the value of the
+      skos:memberList property is also a value of the skos:member property.</rdfs:comment>
+        <rdfs:comment xml:lang="en">ISO
+- hasMemberArray&lt;ordered=true&gt;
+- hasMemberConcept&lt;ordered=true&gt;</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has member list</rdfs:label>
+        <skos:definition xml:lang="en">Relates an ordered collection to the RDF list containing its members.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrowMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrowMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#mappingRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has narrower match</rdfs:label>
+        <skos:definition xml:lang="en">skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#narrowerTransitive"/>
+        <rdfs:comment xml:lang="en">Narrower concepts are typically rendered as children in a concept hierarchy (tree).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has narrower</rdfs:label>
+        <skos:definition xml:lang="en">Comment: As an extension to SKOS, sub-properties of skos:broader and skos:narrower may be needed to model the different hierarchical relationships identified by the ISO 25964 attribute &quot;role&quot;.</skos:definition>
+        <skos:definition xml:lang="en">Relates a concept to a concept that is more specific in meaning.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrowerTransitive -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrowerTransitive">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:comment xml:lang="en">Can be used to derive ISO isTopConceptOf (which is different from skos:isTopConceptOf).
+
+The ISO isTopConceptOf can be derived in SKOS from skos:narrowerTransitive where the skos:narrowerTransitive has as subject a concept that is object of a skos:hasTopConcept statement (i.e., a ThesaurusConcept having topConcept = true).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has narrower transitive</rdfs:label>
+        <skos:definition>skos:narrowerTransitive is a transitive superproperty of skos:narrower.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#related -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#related">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#semanticRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:comment xml:lang="en">skos:related is disjoint with skos:broaderTransitive</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has related</rdfs:label>
+        <skos:definition xml:lang="en">Comment: As an extension to SKOS, sub-properties of skos:related may be needed to model the different associative relationships identified by the ISO 25964 attribute &quot;role&quot;.</skos:definition>
+        <skos:definition xml:lang="en">Relates a concept to a concept with which there is an associative semantic relationship.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#relatedMatch -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#mappingRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#related"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">has related match</rdfs:label>
+        <skos:definition xml:lang="en">skos:relatedMatch is used to state an associative mapping link between two conceptual resources in different concept schemes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#semanticRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#semanticRelation">
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">is in semantic relation with</rdfs:label>
+        <skos:definition xml:lang="en">Links a concept to a concept related by meaning.</skos:definition>
+        <skos:scopeNote xml:lang="en">This property should not be used directly, but as a super-property for all properties denoting a relationship of meaning between concepts.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#topConceptOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#topConceptOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">is top concept in scheme</rdfs:label>
+        <skos:definition xml:lang="en">Definition: Super property of ISO isPartOf of a ThesaurusConcept having its attribute topConcept = true.
+
+Captures ISO TopLevelRelationship</skos:definition>
+        <skos:definition xml:lang="en">Relates a concept to the concept scheme that it is a top level concept of.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2008/05/skos-xl#altLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2008/05/skos-xl#altLabel">
+        <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <rdfs:comment xml:lang="en">Complex super property of ISO hasNonPreferredLabel
+
+Applies if the value of &quot;hasNonPreferredLabel&quot; is of class SimpleNonPreferredTerm with the Boolean attribute &quot;hidden&quot; either absent or with value false.</rdfs:comment>
+        <rdfs:comment xml:lang="en">If C skosxl:altLabel L and L skosxl:literalForm V, then X skos:altLabel V.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+        <rdfs:label xml:lang="en">alternative label</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+        <skos:definition xml:lang="en">The property skosxl:altLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:altLabel.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2008/05/skos-xl#hiddenLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2008/05/skos-xl#hiddenLabel">
+        <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <rdfs:comment xml:lang="en">Complex super property of ISO hasNonPreferredLabel
+
+Applies if the value of &quot;hasNonPreferredLabel&quot; is of class SimpleNonPreferredTerm with the Boolean attribute &quot;hidden&quot; having value true.</rdfs:comment>
+        <rdfs:comment xml:lang="en">If C skosxl:hiddenLabel L and L skosxl:literalForm V, then C skos:hiddenLabel V.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+        <rdfs:label xml:lang="en">hidden label</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#hiddenLabel"/>
+        <skos:definition xml:lang="en">The property skosxl:hiddenLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:hiddenLabel.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2008/05/skos-xl#labelRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2008/05/skos-xl#labelRelation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+        <rdfs:label xml:lang="en">label relation</rdfs:label>
+        <skos:definition xml:lang="en">The property skosxl:labelRelation is used for representing binary (&apos;direct&apos;) relations between instances of the class skosxl:Label.</skos:definition>
+        <skos:scopeNote xml:lang="en">skosxl:labelRelation is not intended to be used directly, but rather as the basis for a design pattern which can be refined for more specific labeling scenarios.</skos:scopeNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2008/05/skos-xl#prefLabel -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2008/05/skos-xl#prefLabel">
+        <rdfs:range rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <rdfs:comment xml:lang="en">Complex super property of ISO hasPreferredLabel
+
+When a label is represented as skos xl:Label, a skos:prefLabel statement is derived from the skos-xl:prefLabel one. (Likewise for altLabel and hiddenLabel.)</rdfs:comment>
+        <rdfs:comment xml:lang="en">If C skosxl:prefLabel L and L skosxl:literalForm V, then X skos:prefLabel V.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+        <rdfs:label xml:lang="en">preferred label</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+        <skos:definition xml:lang="en">The property skosxl:prefLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:prefLabel.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#status -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iso25964/skos-thes#status">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2008/05/skos-xl#Label"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-10-04</terms:modified>
+        <rdfs:comment xml:lang="en">ISO status
+- on ThesaurusConcept
+- on ThesaurusTerm</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">status</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#notation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#notation">
+        <rdfs:comment xml:lang="en">Best practice in SKOS is to (RDF) type the notation value object. This allows multiple notation value types for the same concept or term to be distinguished. 
+
+Note: In ISO 25964-1, such typing is implicit in the thesaurus or it is part of the &quot;notation&quot; value.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">notation</rdfs:label>
+        <skos:definition xml:lang="en">A notation, also known as classification code, is a string of characters such as &quot;T58.5&quot; or &quot;303.4833&quot; used to uniquely identify a concept within the scope of a given concept scheme.</skos:definition>
+        <skos:scopeNote xml:lang="en">By convention, skos:notation is used with a typed literal in the object position of the triple.</skos:scopeNote>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2008/05/skos-xl#literalForm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2008/05/skos-xl#literalForm">
+        <rdfs:domain rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <rdfs:comment xml:lang="en">If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The range of skosxl:literalForm is the class of RDF plain literals.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+        <rdfs:label xml:lang="en">literal form</rdfs:label>
+        <skos:definition xml:lang="en">The property skosxl:literalForm is used to give the literal form of an skosxl:Label.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#CompoundEquivalence -->
+
+    <owl:Class rdf:about="http://purl.org/iso25964/skos-thes#CompoundEquivalence">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/iso25964/skos-thes#plusUse"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/iso25964/skos-thes#PreferredTerm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/iso25964/skos-thes#plusUF"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/iso25964/skos-thes#SplitNonPreferredTerm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-09</terms:modified>
+        <rdfs:comment xml:lang="en">ISO CompoundEquivalence 
+
+iso-thes:plusUseTerm (and its inverse iso-thes:plusUFTerm) may be derived from iso-thes:CompoundEquivalence.
+
+For a iso-thes:CompoundEquivalence instance each derived iso thes:plusUseTerm has as:
+- subject: the iso thes:plusUF value
+- object: the iso thes:plusUse value
+
+An ISO 25964 compliant thesaurus only has one compound equivalence relation for each split non preferred term.
+
+In special cases where the iso-thes:SplitNonPreferredTerm has more than one decomposition, the inverse inference may not be possible.   (While this situation should not arise within a single thesaurus that complies with ISO 25964, it could occur if terms and relationships have been drawn from more than one thesaurus. For this reason the property skos:inScheme (http://www.w3.org/2004/02/skos/core#inScheme) should be used with each instance of the class Compound Equivalence, to relate it to its Thesaurus.)</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">Compound Equivalence</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#ConceptGroup -->
+
+    <owl:Class rdf:about="http://purl.org/iso25964/skos-thes#ConceptGroup">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <owl:disjointWith rdf:resource="http://purl.org/iso25964/skos-thes#ThesaurusArray"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-06-08</terms:modified>
+        <rdfs:comment xml:lang="en">ISO ConceptGroup
+
+Concept groups have several applications.
+
+One such application is illustrated by the EUROVOC and the UNESCO thesaurus.  Both of these use a super structure of domain and of micro-thesaurus.  Both of these structuring elements can be modeled using ConceptGroup.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">Concept Group</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deprecated</ns:term_status>
+        <skos:definition xml:lang="en">Definition: A concept group is a group of concepts making up a subset of the thesaurus. Member concepts may be drawn from many different facets or hierarchies of the thesaurus. While almost any criterion may be used to select the members, this construct is commonly used to define a micro-thesaurus that will be used by a particular user group or domain.
+
+The skos:inScheme (http://www.w3.org/2004/02/skos/core#inScheme) property should be used to indicate the thesaurus to which an instance of skos:Collection applies (see ISO 25964: isPartOf).
+
+Use rdfs:label or xl:prefLabel for the ConceptGroup label (1 per language).
+Optional label attributes typically are mapped to dc: (or dct:) properties:
+- dct:created
+- dct:modified
+These can be attached to the xl:Label instance that is the value of the xl:prefLabel.
+
+Depending on the value of the ISO conceptGroupType a sub-class of iso thes:ConceptGroup should be defined.
+e.g.: EUROVOC and UNESCO use
+- Domain
+- MicroThesaurus (an iso-thes:hasSubGroup of a Domain)</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#PreferredTerm -->
+
+    <owl:Class rdf:about="http://purl.org/iso25964/skos-thes#PreferredTerm">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-09</terms:modified>
+        <rdfs:comment xml:lang="en">ISO PreferredTerm:
+
+Instances of iso-thes:PreferredTerm are objects of skos-xl:prefLabel statements.
+
+Making the class explicit allows RDF/OWL consistency checks for CompoundEquivalence.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">Preferred Term</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#SimpleNonPreferredTerm -->
+
+    <owl:Class rdf:about="http://purl.org/iso25964/skos-thes#SimpleNonPreferredTerm">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-06-08</terms:modified>
+        <rdfs:comment xml:lang="en">ISO SimpleNonPreferredTerm
+
+Instances of iso:SimpleNonPreferredTerm are the object of either of skos xl:altLabel or skos xl:hiddenLabel statements.
+
+
+Identifying cases of Equivalence:
+
+In SKOS/-XL, Equivalence may be derived between the skos/skos xl:prefLabel statements on one hand and the skos/skos xl:altLabel or the skos/skos xl:hiddenLabel statements on the other hand where:
+- the subject of all these statements is the same instance of skos:Concept,
+- the language of all the bound labels is the same,
+- the prefLabel has the role USE, and
+- the altLabel and hiddenLabel have the role UF.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">Simple Non Preferred Term</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deprecated</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#SplitNonPreferredTerm -->
+
+    <owl:Class rdf:about="http://purl.org/iso25964/skos-thes#SplitNonPreferredTerm">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-06-08</terms:modified>
+        <rdfs:comment xml:lang="en">iso SplitNonPreferredTerm
+
+This class provides for an &apos;imagined&apos; concept that may exist in a user’s mind but is not present in the thesaurus (Concept Scheme); it can, however, be represented by a combination of two or more preferred terms (skos-xl:prefLabel) in the thesaurus. (In contrast, concepts present in the thesaurus are provided for by the ThesaurusConcept class.)
+This label is provided by the object property iso thes:plusUF
+- domain: iso-thes:CompoundEquivalence
+- range: iso-thes:SplitNonPreferredTerm.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">Split Non Preferred Term</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deprecated</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iso25964/skos-thes#ThesaurusArray -->
+
+    <owl:Class rdf:about="http://purl.org/iso25964/skos-thes#ThesaurusArray">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2013-12-09</terms:modified>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/iso25964/skos-thes"/>
+        <rdfs:label xml:lang="en">Thesaurus Array</rdfs:label>
+        <ns:term_status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">released</ns:term_status>
+        <skos:definition xml:lang="en">Definition: ISO ThesaurusArray
+An array is a group of sibling concepts
+
+Instances of ThesaurusArray can be mapped to instances of skos:OrderedCollection (a subclass of skos:Collection) if and only if the array needs to be an ordered array (in the ISO-25964 model the value of its Boolean attribute &quot;ordered&quot; is true).
+It is advised to use the skos:inScheme (http://www.w3.org/2004/02/skos/core#inScheme) property on such a skos:Collection to relate it to its Thesaurus (see ISO 25964: isPartOf).
+
+Concepts in a thesaurus array are sibling concepts in the thesaurus.
+
+If present, the node label of a thesaurus array is mapped to rdfs:label or xl:prefLabel.
+Optional node label attributes typically are mapped to dc: (or dct:) properties:
+- dct:created
+- dct:modified
+These can be attached (if needed) to the xl:Label instance that is the value of xl:prefLabel.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#List -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Collection -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Collection">
+        <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">Collection</rdfs:label>
+        <skos:definition xml:lang="en">A meaningful collection of concepts.</skos:definition>
+        <skos:scopeNote xml:lang="en">Labelled collections can be used where you would like a set of concepts to be displayed under a &apos;node label&apos; in the hierarchy.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <owl:disjointWith rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <rdfs:comment xml:lang="en">super class of ISO ThesaurusConcept
+
+The mandatory attribute identifier may be mapped to the Dublin Core property dc:identifier.
+Attributes or associations not detailed below typically are mapped to dc: (or dct:) properties:
+- dct:created
+- dct:modified</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
+        <skos:definition xml:lang="en">An idea or notion; a unit of thought.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme">
+        <owl:disjointWith rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+        <rdfs:comment xml:lang="en">super class of ISO Thesaurus
+
+The mandatory attribute identifier may be mapped to the Dublin Core property dc:identifier. A typical representation of a thesaurus should document a (scoped) relationship between an identifier of this thesaurus and the URI of the RDF Concept Scheme URI.
+
+The mandatory attribute lang can be mapped to either of the Dublin Core properties dc:language or dct:language. The value space is defined by RFC 4646. For multilingual thesaurus, one lang attribute is needed per supported language.
+
+Typically these can be mapped to the corresponding Dublin Core dc: (or dct:) properties:
+- dc:contributor
+- dc:coverage
+- dc:creator
+- dct:created
+- dct:modified
+- dc:date
+- skos:definition
+- dc:format
+- dc:publisher
+- dc:relation, dct:relation or a specialization
+- dc:rights
+- dc:source
+- dc:subject
+- dc:title
+- dc:type
+
+The association &quot;hasVersion&quot; is discussed in the Version_History section of the mapping documentation (http://www.niso.org/schemas/iso25964/correspondencesSKOS/).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">Concept Scheme</rdfs:label>
+        <skos:definition xml:lang="en">A set of concepts, optionally including statements about semantic relationships between those concepts.</skos:definition>
+        <skos:example xml:lang="en">Thesauri, classification schemes, subject heading lists, taxonomies, &apos;folksonomies&apos;, and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies.</skos:example>
+        <skos:scopeNote xml:lang="en">A concept scheme may be defined to include concepts from different sources.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#OrderedCollection -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#OrderedCollection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Collection"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <rdfs:label xml:lang="en">Ordered Collection</rdfs:label>
+        <skos:definition xml:lang="en">An ordered collection of concepts, where both the grouping and the ordering are meaningful.</skos:definition>
+        <skos:scopeNote xml:lang="en">Ordered collections can be used where you would like a set of concepts to be displayed in a specific order, and optionally under a &apos;node label&apos;.</skos:scopeNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2008/05/skos-xl#Label -->
+
+    <owl:Class rdf:about="http://www.w3.org/2008/05/skos-xl#Label">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2008/05/skos-xl#literalForm"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Super class of ISO ThesaurusTerm and of ISO NodeLabel.
+
+A ThesaurusTerm has mandatory attributes lexicalValue and identifier. lexicalValue can be mapped to skos xl:literalForm. The value of identifier can be used as the URI of the skos xl:Label or as the object of a dc:identifier statement on that skos-xl:Label.
+A NodeLabel has mandatory attributes lexicalValue.
+
+The optional ISO25964 lang attribute of ThesaurusTerm and of NodeLabel must be mapped to RDF language tag for RDF plain literals.
+
+Attributes or associations not detailed below typically are mapped to dc: (or dct:) properties:
+- dct:created
+- dct:modified
+- dc:source</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2008/05/skos-xl"/>
+        <rdfs:label xml:lang="en">Label</rdfs:label>
+        <skos:definition xml:lang="en">A special class of lexical entities.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/iso25964/skos-thes#PreferredTerm"/>
+            <rdf:Description rdf:about="http://purl.org/iso25964/skos-thes#SimpleNonPreferredTerm"/>
+            <rdf:Description rdf:about="http://purl.org/iso25964/skos-thes#SplitNonPreferredTerm"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
